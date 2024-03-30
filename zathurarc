@@ -1,0 +1,5 @@
+set database "sqlite"
+set show-recent false
+set selection-clipboard clipboard
+
+
