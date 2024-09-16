@@ -326,3 +326,9 @@ exec "rclone mount GoogleDrive:/ ProvaDrive/ &"
 exec "rclone mount Dropbox_MEU201:/ MEU201_Dropbox/ &
 # Automount Dropbox in MEU201_Dropbox
 exec "rclone mount Dropbox_MEU201:/ MEU201_Dropbox/ &"
+
+# Notification Daemon
+exec swaync
+
+# Toggle control center
+bindsym $mod+Shift+n exec swaync-client -t -sw

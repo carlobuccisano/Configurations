@@ -177,6 +177,9 @@ command! reload :write | restart full
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.  There is also %FOREGROUND, which is useful for entering passwords.
 
+" Xournalpp files
+filextype {*.xopp}, xournalpp %c &
+
 " Pdf
 filextype {*.pdf},<application/pdf> zathura %c &,evince %c
 fileviewer {*.pdf},<application/pdf> zathura %c &,evince %c
