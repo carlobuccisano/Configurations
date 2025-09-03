@@ -323,8 +323,6 @@ exec dropbox
 exec "rclone mount GoogleDrive:/ ProvaDrive/ &"
 
 # Automount Dropbox in MEU201_Dropbox
-exec "rclone mount Dropbox_MEU201:/ MEU201_Dropbox/ &
-# Automount Dropbox in MEU201_Dropbox
 exec "rclone mount Dropbox_MEU201:/ MEU201_Dropbox/ &"
 
 # Notification Daemon
@@ -332,3 +330,8 @@ exec swaync
 
 # Toggle control center
 bindsym $mod+Shift+n exec swaync-client -t -sw
+
+# This screen
+output eDP-1 pos 0 0 res 1920x1080
+# Output is home TV
+output HDMI-A-1 pos 1920 0 res 3840x2160

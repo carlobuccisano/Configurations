@@ -21,6 +21,8 @@ Plug 'lervag/vimtex'
 " UltiSnips
 Plug 'SirVer/ultisnips'
 
+" UndoTree
+Plug 'mbbill/undotree'
 
 call plug#end()
 
@@ -42,6 +44,8 @@ call plug#end()
 " viewer method:
 let g:vimtex_view_method = 'zathura'
 
+" Close braces in omni-completion for VimTeX
+let g:vimtex_complete_close_braces = 1
 " Custom syntax concealing commands in VimTeX
 let g:vimtex_syntax_custom_cmds = [
 			\{'name': 'C', 'mathmode' : 1, 'concealchar' : 'ℂ'},
@@ -70,7 +74,7 @@ set shiftwidth=4
 set number 
 set scrolloff=10
 set spell
-set spelllang=en_gb,fr,it
+set spelllang=en_gb,en_us,fr,it
 
 " Activate concealing but remove its dark grey highlighting
 "set conceallevel=2
