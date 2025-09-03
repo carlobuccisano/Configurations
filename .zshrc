@@ -3,7 +3,9 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH=$PATH:/usr/bin/vendor_perl
+export PATH=$PATH:/usr/bin/vendor_perl:/usr/local/texlive/2025/bin/x86_64-linux
+export MANPATH=$MANPATH:/usr/local/texlive/2025/texmf-dist/doc/man
+export INFOPATH=$INFOPATH:/usr/local/texlive/2025/texmf-dist/doc/info
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -101,3 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tesi="cd ~/Documents/PhD_Thesis/; nvim -p PhD_Thesis.tex modello.sty bibliography.bib"
+alias project="cd ~/Documents/Research-Project"
+alias cv="cd ~/Documents/Curriculum-Vitae"
+alias site="cd ~/Documents/My-Website"
