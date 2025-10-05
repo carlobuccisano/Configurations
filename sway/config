@@ -26,6 +26,10 @@ font pango: SourceCodePro Medium 12
 # on the original workspace that the command was run on.
 set $menu fuzzel | xargs swaymsg exec --
 
+# Setup wob (overlay bar)
+set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
+
 # Set current monitor
 set $laptop eDP-1
 
@@ -50,6 +54,10 @@ output * bg /home/carlo/Downloads/Wallpapers/montagne.jpg fill
 
 ### Border of windows
 default_border pixel 
+
+### Inner gaps between windows
+
+gaps inner 10
 
 ### Idle configuration
 #
@@ -80,7 +88,7 @@ exec swayidle -w \
 
 input "type:keyboard" {
     xkb_model "latitude"
-    xkb_layout "it"
+    xkb_layout "it,fr"
 }
 
 input "type:touchpad" {
@@ -168,6 +176,12 @@ input "type:touchpad" {
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+
+# Touchpad gestures
+
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
 #
 # Layout stuff:
 #
@@ -261,14 +275,16 @@ include /etc/sway/config.d/*
 # Execute gammastep-indicator on startup
 exec gammastep-indicator -c .config/gammastep/config.ini
 
-# Bind brightness control hotkeys
-bindsym XF86MonBrightnessUp exec brightnessctl s +5%
-bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+# Bind brightness control hotkeys (and write number on wob's pipe)
 
-# Bind volume control hotkeys
-bindsym XF86AudioMute exec amixer -q sset Master toggle
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%-
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
+bindsym XF86MonBrightnessUp exec brightnessctl s +5% | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+
+# Bind volume control hotkeys (and write number on wob's pipe)
+
+bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' > $WOBSOCK
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $WOBSOCK
 
 # Bind mic control hotkey
 bindsym XF86AudioMicMute exec amixer -q sset Capture toggle
@@ -322,9 +338,6 @@ exec dropbox
 # Automount GoogleDrive in ProvaDrive
 exec "rclone mount GoogleDrive:/ ProvaDrive/ &"
 
-# Automount Dropbox in MEU201_Dropbox
-exec "rclone mount Dropbox_MEU201:/ MEU201_Dropbox/ &"
-
 # Notification Daemon
 exec swaync
 
@@ -335,3 +348,10 @@ bindsym $mod+Shift+n exec swaync-client -t -sw
 output eDP-1 pos 0 0 res 1920x1080
 # Output is home TV
 output HDMI-A-1 pos 1920 0 res 3840x2160
+
+# See which window is using XWayland
+for_window [shell="xwayland"] title_format "[XWayland] %title"
+
+# To make xdg-desktop-portal-wlr work, for Screen Share
+# exec "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+## This is already in /etc/sway/config.d/50...

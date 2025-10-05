@@ -34,7 +34,7 @@
 		"network", 
 		"backlight", 
 		"keyboard-state", 
-		//"sway/language", 
+		"sway/language", 
 		"battery", 
 		//"battery#bat2", 
 		"clock",
@@ -61,8 +61,13 @@
     //     }
     // },
 
+	"sway/language": {
+    	"format": "{flag} {variant}",
+    	"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+	},
+
     "keyboard-state": {
-        "numlock": true,
+        "numlock": false,
         "capslock": true,
         "format": "{name} {icon}",
         "format-icons": {
