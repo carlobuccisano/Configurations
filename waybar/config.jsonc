@@ -18,7 +18,7 @@
     "modules-left": [
     	"sway/workspaces", 
 		"sway/mode", 
-		"sway/scratchpad", 
+		"sway/scratchpad" 
 		//"custom/media"
     ],
 
@@ -243,7 +243,7 @@
 
     "custom/clipboard": {
  	 "format": "",
- 	 "interval": "once",
+ 	 "interval": "5",
  	 "return-type": "json",
  	 "on-click": "swaymsg -q exec '$clipboard'; pkill -RTMIN+9 waybar",
  	 "on-click-right": "swaymsg -q exec '$clipboard-del'; pkill -RTMIN+9 waybar",
