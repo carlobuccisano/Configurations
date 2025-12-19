@@ -331,6 +331,7 @@ bindsym $mod+l exec "swaylock --screenshots --clock --indicator --effect-pixelat
 
 # Clipboard manager cliphist
 
+exec cliphist wipe
 exec "wl-paste --watch cliphist store"
 set $clipboard cliphist list | fuzzel -d -p "copy: " | cliphist decode | wl-copy
 set $clipboard-del cliphist list | fuzzel -d -p "delete: " | cliphist delete && pkill -RTMIN+9 waybar
