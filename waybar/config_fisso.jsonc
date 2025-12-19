@@ -234,11 +234,11 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol",
+        "on-click": "pavucontrol"
     },
     "custom/clipboard": {
  	 "format": "",
- 	 "interval": "once",
+ 	 "interval": "5",
  	 "return-type": "json",
  	 "on-click": "swaymsg -q exec '$clipboard'; pkill -RTMIN+9 waybar",
  	 "on-click-right": "swaymsg -q exec '$clipboard-del'; pkill -RTMIN+9 waybar",
@@ -261,11 +261,11 @@
     },
     "custom/ddcutil": {
     	"format": "{percentage}% {icon}",
-   	"interval": 1,
+   		"interval": 1,
     	"format-icons": ["", "", ""],
-    	"exec": "/home/carlo/.config/waybar/waybar-ddcutil.py 2> /dev/null",
+    	"exec": "$HOME/.config/waybar/waybar-ddcutil.py 2> /dev/null",
     	"return-type": "json",
-		"on-scroll-up": "ddcutil setvcp 10 + 1 2> /dev/null &",
-		"on-scroll-down": "ddcutil setvcp 10 - 1 2> /dev/null &"
+		"on-scroll-up": "ddcutil setvcp 10 + 5 2> /dev/null &",
+		"on-scroll-down": "ddcutil setvcp 10 - 5 2> /dev/null &"
     }
 }
