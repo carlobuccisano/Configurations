@@ -1,0 +1,7 @@
+set database "sqlite"
+set show-recent false
+set selection-clipboard clipboard
+
+map [index] <Left> navigate_index collapse
+map [index] <Right> navigate_index expand
+

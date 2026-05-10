@@ -1,0 +1,51 @@
+global !p
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+def comment():
+	return vim.eval('vimtex#syntax#in_comment()') == '1'
+def env(name):
+	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')")
+	return x != '0' and y != '0'
+endglobal
+
+context "math()"
+snippet ^ "Expand apex" iA
+^{ $1 }
+endsnippet
+
+context "math()"
+snippet _ "Expand subscript" iA
+_{ $1 }
+endsnippet
+
+snippet \Decl "Declare Math Operator" Ab
+\DeclareMathOperator{${1:shortcut}}{${2:command}}
+endsnippet
+
+context "math()"
+snippet (( "Round parenthesis" iA
+\left( $1 \right)
+endsnippet
+
+context "math()"
+snippet [[ "Square brackets" iA
+\left[ $1 \right]
+endsnippet
+
+context "math()"
+snippet adj "Adjoint functors diagram" bA
+\begin{tikzcd}
+	${1:F} \colon $2 \arrow[r, shift left=1ex, ""{name=i}] & $3 \colon ${4:G} \arrow[l, shift left=.5ex, ""{name=t}]
+		\arrow[phantom, from=t, to=i, , "\scriptscriptstyle\boldsymbol{\bot}"]
+\end{tikzcd}
+endsnippet
+
+context "math()"
+snippet tikz "Tikz-Cd diagram" bA
+\begin{tikzcd}
+	$1
+\end{tikzcd}
+endsnippet
+
+
+
