@@ -13,7 +13,7 @@
 @define-color bg-selected rgb(0, 128, 255);
 
 * {
-  font-family: sans-serif, "Noto Color Emoji";
+  font-family: sans-serif;
 }
 
 .notification-row {
@@ -507,14 +507,14 @@
 
 .notification-content .summary,
 .notification-content .body {
-    font-family: sans-serif, "Noto Color Emoji";
+    font-family: sans-serif;
 	/* This tells the renderer to avoid the "Emoji" variation of standard characters */
     font-feature-settings: "tnum", "onum";
 }
 
 /* Let's be even more aggressive and target the label specifically */
 .notification-content label {
-    font-family: sans-serif, "Noto Color Emoji";
+    font-family: sans-serif;
 }
 
 .time {
