@@ -3,7 +3,7 @@ return {
   { 
     'lervag/vimtex', 
     lazy = false,
-	enabled = false,
+	enabled = true,
     init = function()
       vim.g.vimtex_view_method = 'zathura'
       vim.g.vimtex_complete_close_braces = 1
@@ -13,7 +13,7 @@ return {
   -- UltiSnips
   { 
     'SirVer/ultisnips',
-	enabled = false,
+	enabled = true,
     init = function()
       vim.g.UltiSnipsExpandTrigger = '<Tab>'
       vim.g.UltiSnipsJumpForwardTrigger = '<Tab>'

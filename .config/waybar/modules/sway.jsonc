@@ -1,0 +1,36 @@
+{
+	"sway/workspaces": {
+       	"disable-scroll": true,
+       	"all-outputs": true,
+       	"warp-on-scroll": false,
+   		"format": "{name}"
+   //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+   	},
+	"sway/language": {
+   		"format": "{flag} {variant}",
+   		"on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+	},
+	
+    "sway/mode": {
+   	    "format": "<span style=\"italic\">{}</span>"
+   	},
+		
+	"sway/scratchpad": {
+       	"format": "{icon} {count}",
+       	"show-empty": false,
+       	"format-icons": ["", ""],
+       	"tooltip": true,
+       	"tooltip-format": "{app}: {title}"
+   	}
+}
+
+
