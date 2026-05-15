@@ -7,5 +7,9 @@
            	"locked": "",
            	"unlocked": ""
        	}
-   	}
+   	},
+	"sway/language": {
+   		"format": "{flag} {variant}",
+   		"on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+	}
 }
