@@ -20,7 +20,7 @@
 		"./modules/custom.jsonc",
 		"./modules/keyboard.jsonc",
 		"./modules/network.jsonc",
-		"./modules/sway.jsonc",
+		"./modules/stats.jsonc",
 		"./modules/sway.jsonc"
 	],
     // Choose the order of the modules
