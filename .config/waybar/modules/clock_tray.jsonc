@@ -8,6 +8,7 @@
 		"format": "{:%H:%M}  ",
         "tooltip-format": "\n<tt><span size='9pt'>{calendar}</span></tt>",
         "format-alt": "{:%R %A, %B %d, %Y } 📆",
+		"timezone": "Europe/Paris",
 		"calendar": {
               "mode"          : "year",
               "mode-mon-col"  : 2,
@@ -19,7 +20,8 @@
                    "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
                    "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
                    "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-              }
+              },
+			  "iso8601": true
          },
          "actions":  {
          	  "on-click-right": "mode",
