@@ -17,7 +17,6 @@ vim.opt.foldmethod = "expr"
 -- ========================================================================== --
 -- 2. APPEARANCE & HIGHLIGHTS
 -- ========================================================================== --
--- Activate concealing but remove its dark grey highlighting
--- (Note: Set conceallevel to 2 for VimTeX concealing to work)
-vim.opt.conceallevel = 2
+-- Deactivate concealing
+vim.opt.conceallevel = 0
 
