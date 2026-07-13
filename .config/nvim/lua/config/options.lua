@@ -9,6 +9,8 @@ vim.opt.scrolloff = 10            -- Keep 10 lines above/below cursor
 vim.opt.spell = true              -- Enable spellcheck
 vim.opt.spelllang = { 'en_gb', 'en_us', 'fr', 'it' }
 
+-- Disable middle-click paste in normal, insert, and visual modes
+vim.keymap.set({ 'n', 'i', 'v' }, '<MiddleMouse>', '<Nop>')
 
 -- Python folds --
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"

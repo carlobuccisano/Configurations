@@ -1,10 +1,10 @@
 -- 1. Start native Treesitter for specific filetypes
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'python' }, 
+--[[ vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'python', 'go', 'typescript' }, 
   callback = function()
     vim.treesitter.start()
   end,
-})
+}) ]]
 
 -- 2. Force Conceal highlight to remain transparent, even if a theme reloads
 vim.api.nvim_create_autocmd("ColorScheme", {

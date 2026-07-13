@@ -15,9 +15,19 @@ return {
     --   }
     -- })
 
+	vim.lsp.config("tsserver", {
+  		cmd = {'typescript-language-server', '--stdio'},
+  		filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+  		root_dir = vim.fs.root(0, {'package.json', '.git'}),
+  		on_attach = on_attach,
+  		capabilities = capabilities,
+	})
+
     -- 2. Enable the server
     -- This tells Neovim to look into nvim-lspconfig's dictionary for "pylsp",
     -- grab the default rules, and activate it for Python files.
     vim.lsp.enable("pylsp")
+	vim.lsp.enable("gopls")
+	vim.lsp.enable("tsserver")
   end
 }

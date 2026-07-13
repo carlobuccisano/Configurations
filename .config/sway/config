@@ -4,6 +4,8 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+set $mod Mod4
+
 include /etc/sway/config.d/*
 include /home/carlo/.config/sway/config.d/*
 #
