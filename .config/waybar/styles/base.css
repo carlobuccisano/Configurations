@@ -1,14 +1,14 @@
+/* No font-size is set anywhere in this config on purpose: the bar then follows
+ * the GTK font setting, which monitor_config.sh switches between the monitor
+ * profiles. */
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: sans-serif;
-    font-size: 13px;
 }
 
 window#waybar {
-    background-color: transparent; /*rgba(43, 48, 59, 0.5);*/
-    /*border-bottom: none; 3px solid rgba(100, 114, 125, 0.5);*/
-	/*border-radius: 15px;*/
-    color: #ffffff;
+    background-color: transparent;
+    color: @fg;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -17,22 +17,46 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: @bar-bg;
+    padding: 0 10px; /* Gives the edge modules some breathing room inside the pill */
+}
+
+window#waybar.empty .modules-center {
     background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
+    padding: 0;
 }
 
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+/* The groups render as pills and the modules inside repeat the radius, so their
+   own backgrounds follow the same shape. */
+.modules-left,
+.modules-center,
+.modules-right,
+button,
+#backlight,
+#battery,
+#clock,
+#language,
+#mode,
+#network,
+#pulseaudio,
+#scratchpad,
+#tray {
+    border-radius: 15px;
+}
+
+/* #language sets its own, narrower padding in keyboard.css */
+#backlight,
+#battery,
+#clock,
+#mode,
+#network,
+#pulseaudio,
+#scratchpad,
+#tray {
+    padding: 0 10px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -43,28 +67,4 @@ window#waybar.chromium {
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-.modules-left,
-.modules-center,
-.modules-right {
-    background-color: rgba(43, 48, 59, 0.8);
-    border-radius: 15px;
-    padding: 0 10px; /* Gives the edge modules some breathing room inside the pill */
-}
-
-window#waybar.empty .modules-center {
-    background-color: transparent;
-    padding: 0;
 }

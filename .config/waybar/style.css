@@ -1,27 +1,12 @@
+/* Entry point. Import order matters: palette.css defines the colour tokens the
+ * other files reference, so it has to be parsed first. */
+
+@import "styles/palette.css";
 @import "styles/base.css";
+@import "styles/clock.css";
 @import "styles/hardware.css";
 @import "styles/keyboard.css";
 @import "styles/media.css";
 @import "styles/network.css";
 @import "styles/notifications.css";
 @import "styles/sway.css";
-
-
-/* Common settings for all: padding and radius */
-
-#backlight,
-#battery,
-#clock,
-#language,
-#mode,
-#network,
-#pulseaudio,
-#scratchpad,
-#tray
- {
-    padding: 0 10px;
-	border-radius: 15px;
-}
-
-
-

@@ -1,51 +1,39 @@
 {
-    "layer": "top", // Waybar at top layer
-	"margin": "0 15 10 15",
-    
-    // "position": "top", // Waybar position (top|bottom|left|right)
-    
-    //"height": 20, // Waybar height (to be removed for auto height)
-    
-    // "width": 1280, // Waybar width
-    
+    "layer": "top",
+    "margin": "0 15 10 15",
     "spacing": 4, // Gaps between modules (4px)
-    
-    //"mode": "hide",
-    
     "ipc": true,
-   
-	"include": [
-		"./modules/audio.jsonc",
-		"./modules/battery.jsonc",
-		"./modules/clock_tray.jsonc",
-		"./modules/custom.jsonc",
-		"./modules/keyboard.jsonc",
-		"./modules/network.jsonc",
-		"./modules/stats.jsonc",
-		"./modules/sway.jsonc"
-	],
-    // Choose the order of the modules
-    
+
+    "include": [
+        "./modules/audio.jsonc",
+        "./modules/battery.jsonc",
+        "./modules/clock_tray.jsonc",
+        "./modules/custom.jsonc",
+        "./modules/keyboard.jsonc",
+        "./modules/network.jsonc",
+        "./modules/stats.jsonc",
+        "./modules/sway.jsonc"
+    ],
+
     "modules-left": [
-    	"sway/workspaces", 
-		"sway/mode", 
-		"sway/scratchpad" 
+        "sway/workspaces",
+        "sway/mode",
+        "sway/scratchpad"
     ],
 
     "modules-center": [
-    	"sway/window"
+        "sway/window"
     ],
-    
-    "modules-right": [
-		"custom/clipboard",
-		"pulseaudio", 
-		"network", 
-		"backlight", 
-		"sway/language", 
-		"battery", 
-		"clock",
-		"custom/notification",
-		"tray"
-    ]
- }
 
+    "modules-right": [
+        "custom/clipboard",
+        "pulseaudio",
+        "network",
+        "backlight",
+        "sway/language",
+        "battery",
+        "clock",
+        "custom/notification",
+        "tray"
+    ]
+}

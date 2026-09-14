@@ -1,10 +1,9 @@
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
-	padding: 0 10px;
+    background-color: @warning;
+    color: @fg-inverted;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    background-color: @muted;
+    color: @muted-fg;
 }

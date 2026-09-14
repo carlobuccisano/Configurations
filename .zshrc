@@ -102,3 +102,5 @@ unsetopt beep
 # export ARCHFLAGS="-arch $(uname -m)"
 
 
+alias pelico-deployer=/home/carlo/pelico-deployer-bin/venv/bin/pelico-deployer
+export PATH=$PATH:~/.local/bin
