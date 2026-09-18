@@ -1,0 +1,21 @@
+/* Shared colour tokens. Waybar is GTK3, which has no CSS custom properties, so
+ * @define-color is the only way to state a colour once and reuse it. */
+
+@define-color bar-bg      rgba(43, 48, 59, 0.8);
+@define-color overlay     rgba(0, 0, 0, 0.2);
+
+@define-color fg          #ffffff;
+@define-color fg-inverted #000000;
+
+@define-color accent      #64727D;
+@define-color info        #2980b9;
+@define-color ok          #26A65B;
+@define-color warning     #f1c40f;
+@define-color urgent      #eb4d4b;
+@define-color critical    #f53c3c;
+
+@define-color muted       #90b1b1;
+@define-color muted-fg    #2a5c45;
+
+@define-color language-bg #00b093;
+@define-color language-fg #740864;
