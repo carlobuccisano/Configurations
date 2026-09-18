@@ -26,7 +26,7 @@ case "$1" in
         mod=Mod5
         ;;
     off)
-        size=10
+        size=11
         gtk_size=11
         swaync_width=500
         mod=Mod4

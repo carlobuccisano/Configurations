@@ -5,5 +5,8 @@
     color: @language-fg;
     padding: 0 5px;
     margin: 0 5px;
-    min-width: 16px;
+    /* Reserve room for the flag and variant: when the bar runs out of width at
+     * larger font sizes, GTK otherwise shrinks this module to nothing rather
+     * than truncating the long network SSID. In em so it holds at any size. */
+    min-width: 5em;
 }
